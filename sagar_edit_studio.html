@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sagar Edit Studio</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#111827;color:white;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:700}.btn{border:0;border-radius:10px;padding:12px 18px;background:#2563eb;color:white;font-weight:700}
+.hero{text-align:center;padding:55px 20px;background:linear-gradient(135deg,#dbeafe,#fff)}
+.hero h1{font-size:38px;margin:8px}.hero p{font-size:18px;color:#475569}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:25px;max-width:950px;margin:auto}
+.card{background:white;padding:25px;border-radius:18px;box-shadow:0 5px 20px #00000010}
+.price{font-size:25px;font-weight:700;margin:15px 0}
+.modal{display:none;position:fixed;inset:0;background:#0008;align-items:center;justify-content:center;padding:20px}
+.box{background:white;border-radius:18px;padding:25px;width:min(400px,100%)}
+input{width:100%;padding:13px;margin:8px 0;border:1px solid #cbd5e1;border-radius:10px}
+.note{font-size:13px;color:#64748b;margin-top:14px}
+footer{text-align:center;padding:30px;color:#64748b}
+</style>
+</head>
+<body>
+<header><div class="logo">🎬 Sagar Edit Studio</div><button class="btn" onclick="openLogin()">Login / Sign Up</button></header>
+<section class="hero">
+<h1>Professional Photo & Video Editing</h1>
+<p>Reels • YouTube Shorts • Photo Editing • Social Media Designs</p>
+<button class="btn" onclick="openLogin()">Create Free Account</button>
+</section>
+<section class="cards">
+<div class="card"><h2>🎬 Reel Editing</h2><p>Cinematic edits for Instagram & YouTube Shorts.</p><div class="price">From ₹99</div></div>
+<div class="card"><h2>📸 Photo Editing</h2><p>Background, outfit and lighting improvements.</p><div class="price">From ₹49</div></div>
+<div class="card"><h2>▶️ YouTube Shorts</h2><p>Short-form video cuts and captions.</p><div class="price">From ₹99</div></div>
+</section>
+<footer>© 2026 Sagar Edit Studio · Contact us for your editing work</footer>
+
+<div class="modal" id="modal">
+<div class="box">
+<h2>Login / Sign Up</h2>
+<input id="name" placeholder="Your name">
+<input id="email" type="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button class="btn" style="width:100%;margin-top:8px" onclick="signup()">Continue</button>
+<p class="note">Demo only: this page does not send passwords or payment details anywhere.</p>
+<button onclick="closeLogin()" style="border:0;background:none;margin-top:10px">Close</button>
+</div></div>
+
+<script>
+function openLogin(){document.getElementById('modal').style.display='flex'}
+function closeLogin(){document.getElementById('modal').style.display='none'}
+function signup(){
+ const n=document.getElementById('name').value.trim();
+ if(!n){alert('Please enter your name.');return}
+ closeLogin(); alert('Welcome, '+n+'! Account demo created.');
+}
+</script>
+</body>
+</html>
