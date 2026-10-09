@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillEarn — Earn with your skills</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#111827;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;font-weight:800}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer}
+.primary{background:#2563eb;color:white}.hero{padding:55px 6%;background:linear-gradient(135deg,#eaf2ff,#fff)}
+.hero h1{font-size:42px;margin:0 0 12px}.hero p{font-size:18px;color:#526074;max-width:650px}
+.container{padding:35px 6%;max-width:1200px;margin:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 5px 20px #17203312}.icon{font-size:32px}
+.price{font-size:21px;font-weight:800;margin:14px 0}.muted{color:#687386}
+input,select{width:100%;padding:12px;border:1px solid #d8deea;border-radius:10px;margin:7px 0 15px}
+footer{text-align:center;padding:28px;color:#687386}.note{background:#fff7ed;border-left:4px solid #f59e0b;padding:14px;border-radius:8px;margin-top:20px}
+</style>
+</head>
+<body>
+<header><div class="logo">SkillEarn</div><button class="btn primary" onclick="document.getElementById('join').scrollIntoView()">Join Free</button></header>
+
+<section class="hero">
+<h1>Turn your skills into income.</h1>
+<p>Offer useful services like video editing, photo editing and thumbnail design. Get paid for real work—no betting, no colour prediction, and no guaranteed-income claims.</p>
+<button class="btn primary" onclick="document.getElementById('services').scrollIntoView()">Explore Services</button>
+</section>
+
+<section class="container" id="services">
+<h2>Popular Services</h2>
+<div class="grid">
+<div class="card"><div class="icon">🎬</div><h3>Reel / Video Editing</h3><p class="muted">Short-form edits, captions and transitions.</p><div class="price">From ₹100</div><button class="btn primary" onclick="alert('Service request started!')">Request Service</button></div>
+<div class="card"><div class="icon">🖼️</div><h3>Photo Editing</h3><p class="muted">Cleanups, background changes and social photos.</p><div class="price">From ₹100</div><button class="btn primary" onclick="alert('Service request started!')">Request Service</button></div>
+<div class="card"><div class="icon">🎨</div><h3>Thumbnail Design</h3><p class="muted">Eye-catching thumbnails for YouTube and Shorts.</p><div class="price">From ₹100</div><button class="btn primary" onclick="alert('Service request started!')">Request Service</button></div>
+</div>
+<div class="note">Prices shown are examples, not guaranteed earnings. Actual income depends on customers, work quality and completed services.</div>
+</section>
+
+<section class="container" id="join">
+<h2>Start Selling Your Skill</h2>
+<div class="card">
+<label>Your name</label><input id="name" placeholder="Enter your name">
+<label>Skill</label><select id="skill"><option>Video Editing</option><option>Photo Editing</option><option>Thumbnail Design</option></select>
+<label>Starting price (₹)</label><input id="price" type="number" min="1" placeholder="100">
+<button class="btn primary" onclick="submitSkill()">Create Service</button>
+<p id="result" class="muted"></p>
+</div>
+</section>
+
+<footer>© 2026 SkillEarn • Skill-based marketplace demo</footer>
+<script>
+function submitSkill(){
+ const n=document.getElementById('name').value.trim(), s=document.getElementById('skill').value, p=document.getElementById('price').value;
+ document.getElementById('result').textContent=n && p ? `Great, ${n}! Your ${s} service is ready in this demo at ₹${p}.` : 'Please enter your name and price.';
+}
+</script>
+</body>
+</html>
